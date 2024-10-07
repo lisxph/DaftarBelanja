@@ -40,7 +40,7 @@ void tampilkanDaftar() {
 }
 
 
-float hitung Total() {
+float hitungTotal() {
   float total = 0;
   for (int i = 0;i < jumlah; i++) {
     total += harga[i];
