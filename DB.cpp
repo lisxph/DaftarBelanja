@@ -47,3 +47,51 @@ float hitung Total() {
   }
   return total;
 }
+
+int main(){
+  int pilihan;
+  char namaBarang[50];
+  float hargaBarang;
+
+  do {
+      cout<<"\n=== Daftar Belanja ===\n";
+      cout<<"1. Tambah Barang\n";
+      cout<<"2. Hapus Barang\n";
+      cout<<"3. Tampilkan Daftar\n";
+      cout<<"4. Hitung Total\n";
+      cout<<"5. Keluar\n";
+      cout<<"Pilih opsi (1-5): ";
+      cin>>pilihan;
+      cin.ignore();
+
+      switch (pilihan){
+          case 1: 
+              cout<<"Masukkan nama barang: ";
+              cin.getline(namaBarang, 50);
+              cout<<"Masukkan harga barang: ";
+              cin>>hargaBarang;
+              tambahBarang(namaBarang, hargaBarang);
+              break;
+          case 2:
+              tampilkanDaftar();
+              int nomor;
+              cout<<"Masukkan nomor barang yang ingin dihapus: ";
+              cin>>nomor;
+              hapusBarang(nomor - 1);
+              break;
+          case 3:
+              tampilkanDaftar();
+              break;
+          case 4:
+              cout<<"Total harga daftar belanja: Rp "<<hitungTotal()<<endl;
+              break;
+          case 5:
+              cout<<"Keluar dari program.\n";
+              break;
+          default:
+              cout<<"Pilihan invalid. Silahkan coba lagi.\n";
+      }
+  } while (pilihan != 5);
+
+  return 0;
+}
